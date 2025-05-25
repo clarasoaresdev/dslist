@@ -11,14 +11,14 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_game_list")
 public class GameList {
-	
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
-	public GameList() {}
+
+	public GameList() {
+	}
 
 	public GameList(Long id, String name) {
 		this.id = id;
@@ -42,7 +42,7 @@ public class GameList {
 	}
 
 	@Override
-	public int hashCode() { //compara os games da lista, pra evitar repetição
+	public int hashCode() {
 		return Objects.hash(id);
 	}
 
@@ -57,5 +57,4 @@ public class GameList {
 		GameList other = (GameList) obj;
 		return Objects.equals(id, other.id);
 	}
-	
 }
